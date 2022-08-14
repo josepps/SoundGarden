@@ -30,10 +30,14 @@ inputForm.addEventListener('submit', async (event) =>{
   const options = {
     method:'DELETE',
     headers:{'content-type':'application/json'},
+    redirect: 'follow'
   }
  
   const res = await fetch (`${URL}/${id}`,options)
-  const resData = await res.json()
+  if (res.status == 204){
+    alert('Evento excluido com sucesso')
+  }
+  window.location.href = 'admin.html'
   
 }) 
 
