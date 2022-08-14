@@ -48,3 +48,9 @@ footer nav ul{
 footer nav ul li  {
     padding: 10px;
 }
+
+.eventos {
+    display: flex;
+    flex-wrap: wrap;
+
+}
