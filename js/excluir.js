@@ -14,7 +14,6 @@ async function getEventos (){
   const response = await fetch (`${URL}/${id}`) 
   const data = await response.json()  
 
-  console.log(data)
   
   inputNome.value = data.name
   inputPoster.value = data.poster
@@ -25,5 +24,16 @@ async function getEventos (){
 }
 getEventos()
 
+inputForm.addEventListener('submit', async (event) =>{
+  event.preventDefault()
 
+  const options = {
+    method:'DELETE',
+    headers:{'content-type':'application/json'},
+  }
+ 
+  const res = await fetch (`${URL}/${id}`,options)
+  const resData = await res.json()
+  
+}) 
 

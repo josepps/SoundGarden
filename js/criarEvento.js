@@ -25,12 +25,14 @@ inputForm.addEventListener('submit', async (event) => {
     const options = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(novoShow)    
+        body: JSON.stringify(novoShow),
+        redirect:'follow'    
     }
 
 
     const response = await fetch(URL,options)
     const dataResponse = await response.json()
+    window.location.href='admin.html'
     
     console.log(response)
     console.log(dataResponse)
