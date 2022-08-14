@@ -18,7 +18,7 @@ inputForm.addEventListener('submit', async (event) => {
         attractions: [inputAtracoes.value],
         description: inputDescricao.value,
         scheduled:inputData.value,
-        number_tickets: inputLotacao.value,
+        number_tickets: inputLotacao.value
 
     }
     
@@ -29,18 +29,17 @@ inputForm.addEventListener('submit', async (event) => {
     }
 
 
-    const response = await fetch(URL)
+    const response = await fetch(URL,options)
     const dataResponse = await response.json()
-
+    
     console.log(response)
+    console.log(dataResponse)
 
     if (response.status == 201){
-        window.alert('success')
+       alert('Evento cadastrado com successo')
     }
-
 })
   
-
 
 
 
