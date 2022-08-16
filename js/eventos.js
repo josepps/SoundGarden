@@ -33,7 +33,6 @@ async function listarEventos (){
 
     let btnX = document.querySelector('.fechar')
         btnX.addEventListener('click',modalOff)
-
 }
 
 listarEventos()
