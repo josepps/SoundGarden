@@ -9,11 +9,11 @@ async function listarReservas (){
     data.forEach((reservas) =>{
         tabela.innerHTML += 
        `<th> ${data.indexOf(reservas)+1} </th>
+       <th> ${reservas._id} </th>
         <th> ${reservas.owner_name} </th>
         <th> ${reservas.owner_email} </th>
         <th> ${reservas.number_tickets} </th>
-        `
-        
+        `       
     } ) 
 
 
