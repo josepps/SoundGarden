@@ -1,10 +1,15 @@
-const URL = 'https://xp41-soundgarden-api.herokuapp.com/events'
+const URL = 'https://xp41-soundgarden-api.herokuapp.com'
 const tabela = document.querySelector('#tabela')
 const modal = document.querySelector('#container')
 const btnX  = document.querySelector('.fechar')
+const inputNome = document.querySelector('#modal-nome')
+const inputEmail = document.querySelector('#modal-email')
+const inputTickets = document.querySelector('#tickets')
+const solicitarReserva = document.getElementById('modal-solicitar')
+
 
 async function listarEventos (){
-    const response = await fetch(URL)
+    const response = await fetch(`${URL}/events`)
         const data = await response.json()
             const show = data.slice(0,3)
         show.forEach(evento => {
@@ -43,5 +48,9 @@ solicitarReserva.addEventListener('click', async (event) =>{
     }
 
     const res = await fetch(`${URL}/bookings`,{method: 'POST',body:JSON.stringify(reserva), headers: {'Content-Type': 'application/json'}})
+
+    if (res.status == 201){
+        alert('Reserva realizada com sucesso.')
+    }
 
 })

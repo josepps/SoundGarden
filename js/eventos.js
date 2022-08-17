@@ -50,5 +50,8 @@ solicitarReserva.addEventListener('click', async (event) =>{
 
     const res = await fetch(`${URL}/bookings`,{method: 'POST',body:JSON.stringify(reserva), headers: {'Content-Type': 'application/json'}})
 
+    if (res.status == 201){
+        alert('Reserva realizada com sucesso.')
+    }
 })
 
